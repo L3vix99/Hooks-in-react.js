@@ -1,23 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
+import ClassComponentExample from './components/ClassComponentExample';
+import HooksExample from './components/HooksExample';
+import React, {useState} from 'react';
+
 
 function App() {
+  const [selectedId, setSelcetedId] =useState(1);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Hello hooks</h1>
+
+     <button onClick={() => setSelcetedId(selectedId + 1)}>Zmień id</button>
+
+      <ClassComponentExample id={selectedId} />
+      <HooksExample id={selectedId} />
     </div>
   );
 }
